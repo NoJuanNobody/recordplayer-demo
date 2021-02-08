@@ -15,7 +15,7 @@ const useStyles = makeStyles(styles)
  */
 
 function RecordPlayer({song, spinning=false}) {
-  const { spinRecord } = useRecordPlayer();
+  const { spinRecord, stopRecord } = useRecordPlayer();
   const { direction, speed } = useSelector(({recordPlayer})=>{
     return recordPlayer
   })
@@ -43,9 +43,9 @@ function RecordPlayer({song, spinning=false}) {
     <div className={tray}>
       {(direction === 'CLOCKWISE' || direction === 'COUNTERCLOCKWISE') && <div className={item} >
         <Rotate className={root}>
-          <img className={record} alt='record' onClick={()=> spinRecord('CLOCKWISE', .5)} src={Record} />
+          <img className={record} alt='record' onClick={()=> stopRecord()} src={Record} />
         </Rotate>
-        <Sound playStatus={Sound.status.PLAYING} url={soundfile}/>
+        <Sound playStatus={Sound.status.PLAYING} playbackRate={speed} url={soundfile}/>
       </div>}
       
       {direction === null && <div className={item} >

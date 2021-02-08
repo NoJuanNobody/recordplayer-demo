@@ -21,11 +21,10 @@ function ControlPad() {
   */
   return (
     <div>
-      <Button onClick={()=>spinRecord('CLOCKWISE',speed)} className={classes.button}>Start</Button>
+      <Button onClick={()=>spinRecord('CLOCKWISE',1)} className={classes.button}>Start</Button>
       <Button onClick={()=>stopRecord()} className={classes.button}>Stop</Button>
-      <Button onClick={()=>spinRecord('COUNTERCLOCKWISE',speed)} className={classes.button}>reverse</Button>
-      <Button onClick={()=>spinRecord('COUNTERCLOCKWISE',1.45)} className={classes.button}>45</Button>
-      <Button onClick={()=>spinRecord('COUNTERCLOCKWISE',1.35)} className={classes.button}>35</Button>
+      <Button onClick={()=>spinRecord('COUNTERCLOCKWISE',0.45)} className={classes.button}>45</Button>
+      <Button onClick={()=>spinRecord('COUNTERCLOCKWISE',0.35)} className={classes.button}>35</Button>
     </div>
   )
 }
